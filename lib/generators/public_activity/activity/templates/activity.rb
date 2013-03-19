@@ -1,3 +1,4 @@
 # Activity model for customisation & custom methods
-class Activity < PublicActivity::Activity
+class <%= name.classify.singularize %> < PublicActivity::Activity
+
 end

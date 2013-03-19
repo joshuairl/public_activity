@@ -8,6 +8,8 @@ module PublicActivity
       extend Base
 
       argument :name, :type => :string, :default => 'create_activities'
+      argument :model_name, :type => :string, :default => 'activity'
+
       # Create migration in project's folder
       def generate_files
         migration_template 'migration.rb', "db/migrate/#{name}"

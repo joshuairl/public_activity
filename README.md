@@ -72,6 +72,27 @@ end
     rails g public_activity:migration
     rake db:migrate
 
+Let's say you would rather call the main table / model `Actions` instead of `Activities`...
+Simply run this instead:
+
+    rails g public_activity:migration create_actions action
+    rake db:migrate
+
+This would generate a migration file of `db/migrate/xxxxxxxxxxx_create_actions.rb` and a table named `actions`
+
+That takes care of the migration, but what about the model file?
+
+    rails g public_activity:activity action
+
+This will generate a model file named `action.rb` with the contents of
+
+```ruby app/models/action.rb
+# Activity model for customisation & custom methods
+class Action < PublicActivity::Activity
+
+end
+```
+
 ### Model configuration
 
 Include `PublicActivity::Model` and add `tracked` to the model you want to keep track of:

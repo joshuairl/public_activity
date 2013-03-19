@@ -10,7 +10,7 @@ module PublicActivity
       argument :name, :type => :string, :default => 'activity'
       # Create model in project's folder
       def generate_files
-        copy_file 'activity.rb', "app/models/#{name}.rb"
+        template 'activity.rb', "app/models/#{name}.rb"
       end
     end
   end
